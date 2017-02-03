@@ -1,0 +1,40 @@
+﻿<Window x:Class="MemInsp.ColorKey"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Color Key" Height="300" Width="465" ShowInTaskbar="False" ResizeMode="NoResize" Icon="/MemInsp;component/Resources/icon_inspector.ico" KeyUp="Window_KeyUp">
+	<Grid>
+		<Grid.RowDefinitions>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+			<RowDefinition/>
+		</Grid.RowDefinitions>
+		<Grid.ColumnDefinitions>
+			<ColumnDefinition Width="100"/>
+			<ColumnDefinition/>
+		</Grid.ColumnDefinitions>
+		<Border Background="Green" Grid.Column="0" Grid.Row="0"/>
+		<Label Content="Managed Assembly (GAC or Framework Folder)" Grid.Column="1" Grid.Row="0" FontFamily="Arial" FontSize="14"/>
+		<Border Background="LightBlue" Grid.Column="0" Grid.Row="1"/>
+		<Label Content="System Folder" Grid.Column="1" Grid.Row="1" FontFamily="Arial" FontSize="14"/>
+		<Border Background="Gray" Grid.Column="0" Grid.Row="2"/>
+		<Label Content="System32 Folder" Grid.Column="1" Grid.Row="2" FontFamily="Arial" FontSize="14"/>
+		<Border Background="Cyan" Grid.Column="0" Grid.Row="3"/>
+		<Label Content="Windows Folder" Grid.Column="1" Grid.Row="3" FontFamily="Arial" FontSize="14"/>
+		<Border Background="Tan" Grid.Column="0" Grid.Row="4"/>
+		<Label Content="Program Files" Grid.Column="1" Grid.Row="4" FontFamily="Arial" FontSize="14"/>
+		<Border Background="Yellow" Grid.Column="0" Grid.Row="5"/>
+		<Label Content="Program Files (x86)" Grid.Column="1" Grid.Row="5" FontFamily="Arial" FontSize="14"/>
+		<Border Background="Salmon" Grid.Column="0" Grid.Row="6"/>
+		<Label Content="ActiveX Control (OCX)" Grid.Column="1" Grid.Row="6" FontFamily="Arial" FontSize="14"/>
+		<Border Background="Red" Grid.Column="0" Grid.Row="7"/>
+		<Label Content="Unknown Module Extension" Grid.Column="1" Grid.Row="7" FontFamily="Arial" FontSize="14"/>
+		<Border Background="Orange" Grid.Column="0" Grid.Row="8"/>
+		<Label Content="Executable Image" Grid.Column="1" Grid.Row="8" FontFamily="Arial" FontSize="14"/>
+	</Grid>
+</Window>

@@ -1,0 +1,30 @@
+﻿<Window x:Class="MemInsp.Symbols"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Symbols" Height="518" Width="797" ShowInTaskbar="False" Icon="/MemInsp;component/Resources/icon_inspector.ico">
+	<Window.Resources>
+		<ResourceDictionary>
+
+		</ResourceDictionary>
+	</Window.Resources>
+	<ScrollViewer VerticalScrollBarVisibility="Auto">
+		<Grid>
+			<ListView Name="lstSymbols" ItemsSource="{Binding SymbolsList}">
+				<ListView.ContextMenu>
+					<ContextMenu Name="mnuOptions">
+						<MenuItem Name="SearchOnline" Header="Search Online..." Click="menuItem_Clicked"/>
+					</ContextMenu>
+				</ListView.ContextMenu>
+				<ListView.View>
+					<GridView x:Name="grdSymbols">
+						<GridViewColumn Header="Symbol Name" x:Name="grcSymbolName" Width="500" DisplayMemberBinding="{Binding SymbolName}"/>
+						<GridViewColumn Header="Address" x:Name="grcAddressInHex" Width="250" DisplayMemberBinding="{Binding AddressInHex}" />
+					</GridView>
+				</ListView.View>
+			</ListView>
+		</Grid>
+	</ScrollViewer>
+
+
+
+</Window>

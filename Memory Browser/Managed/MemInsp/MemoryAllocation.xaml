@@ -1,0 +1,32 @@
+﻿<Window x:Class="MemInsp.MemoryAllocation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MemoryAllocation" Height="351" Width="742" ShowInTaskbar="False"
+		xmlns:local="clr-namespace:MemoryMapObjects;assembly=MeMapObj" Icon="/MemInsp;component/Resources/icon_inspector.ico">
+
+	<Window.Resources>
+		<ResourceDictionary>
+
+		</ResourceDictionary>
+	</Window.Resources>
+	<ScrollViewer VerticalScrollBarVisibility="Auto">
+		<Grid>
+			<ListView Name="lstMemAllocations">
+				<ListView.ContextMenu>
+					<ContextMenu Name="mnuOptions">
+						<MenuItem Name="ShowMemoryDump" Header="Show memory dump..." Click="menuItem_Clicked"/>
+					</ContextMenu>
+				</ListView.ContextMenu>
+				<ListView.View>
+					<GridView x:Name="grdMemAllocations">
+                        <GridViewColumn Header="Base Address" x:Name="grcBaseAddress" Width="100" DisplayMemberBinding="{Binding BaseAddressInHex}"/>
+						<GridViewColumn Header="Region Size" x:Name="grcRegionSize" Width="100" DisplayMemberBinding="{Binding RegionSize}"/>
+						<GridViewColumn Header="Protection" x:Name="grcProtectionLevel" DisplayMemberBinding="{Binding AllocationProtect}"/>
+						<GridViewColumn Header="State" x:Name="grcAllocationState" Width="100" DisplayMemberBinding="{Binding State}"/>
+						<GridViewColumn Header="Type" x:Name="grcAllocationType" Width="100" DisplayMemberBinding="{Binding Type}"/>
+					</GridView>
+				</ListView.View>
+			</ListView>
+		</Grid>
+	</ScrollViewer>
+</Window>

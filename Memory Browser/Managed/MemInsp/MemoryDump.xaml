@@ -1,0 +1,24 @@
+﻿<Window x:Class="MemInsp.MemoryDump"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Memory Dump" Height="384" Width="800" Loaded="Window_Loaded" Icon="/MemInsp;component/Resources/icon_inspector.ico">
+    <Window.Resources>
+        <XmlDataProvider x:Key="xmlMemoryDump" IsAsynchronous="True"/>
+    </Window.Resources>
+    <Grid>
+		<Grid Margin="8,34,10,11" Name="grdMain">
+            <ListView Margin="8,8,9,9" Name="lstSelectedMemoryDump"
+					  ItemsSource="{Binding Source={StaticResource xmlMemoryDump} }" FontFamily="Courier New">
+                <ListView.View>
+                    <GridView x:Name="grdMemoryDump">
+						<GridViewColumn Header="Line" x:Name="grLineNumber" Width="50" DisplayMemberBinding="{Binding XPath=@lineNumber}"/>
+						<GridViewColumn Header="Address" x:Name="grAddress" Width="100" DisplayMemberBinding="{Binding XPath=@address}"/>
+						<GridViewColumn Header="Content (Hex)" x:Name="grcContentHex" Width="400" DisplayMemberBinding="{Binding XPath=@contentAsHex}"/>
+						<GridViewColumn Header="Content (ASCII)" x:Name="grcContentAscii" Width="300" DisplayMemberBinding="{Binding XPath=contentAsAscii}" />
+                    </GridView>
+                </ListView.View>
+            </ListView>
+        </Grid>
+        <Button Height="23" HorizontalAlignment="Right" Margin="0,7,21,0" Name="btnSaveDump" VerticalAlignment="Top" Width="75" Click="btnSaveDump_Click">Save Block</Button>
+    </Grid>
+</Window>

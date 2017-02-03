@@ -1,0 +1,17 @@
+﻿<Window x:Class="MemInsp.About"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    Title="About Memory Inspector" Height="218" Width="431" ShowInTaskbar="False" ResizeMode="NoResize" Icon="/MemInsp;component/Resources/icon_inspector.ico" KeyUp="Window_KeyUp">
+	<Grid>
+		<Image Margin="12,10,0,14" Name="imgMVPLogo" Stretch="Fill" HorizontalAlignment="Left" Width="103" Source="/MemInsp;component/Resources/MVP_Logo.png" />
+		<TextBlock Margin="123,5,12,34" Name="lblAboutMessage"  FontStyle="Oblique" TextWrapping="Wrap">
+			Memory inspector is a tool for analyzing memory usage and allocations made by an application and its dependent modules. It also allows to collect
+			information about the memory use at a given time thus facilitating baseline and comparison between execution environments.
+			<LineBreak/><LineBreak/>Based on C++, C# and WPF. <LineBreak/>Written by Angel J. Hernández M.<LineBreak/>
+			(c) Copyright March 2011
+		</TextBlock>
+		<Label Cursor="Hand" FontSize="11.5" FontStyle="Oblique" Foreground="Blue" Margin="133,151,24,5" Name="label1" MouseUp="label1_MouseUp">
+			<Underline>http://www.bonafideideas.com</Underline>
+		</Label>
+	</Grid>
+</Window>
